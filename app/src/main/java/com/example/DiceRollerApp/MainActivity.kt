@@ -23,9 +23,12 @@ class MainActivity : AppCompatActivity() {
 
         rollButton.setOnClickListener {
             rollDice()
-            val toast = Toast.makeText(this, " 2 Dice Rolled", Toast.LENGTH_SHORT)
+            val toast = Toast.makeText(this, "Dice Rolled", Toast.LENGTH_SHORT)
             toast.show()
         }
+
+        // Do a ice roll when the app starts
+        rollDice()
 
     }
 
@@ -41,8 +44,21 @@ class MainActivity : AppCompatActivity() {
         val diceImage: ImageView = findViewById(R.id.diceImage)
 
         //set the right dice image equal to the generated roll
-        diceImage.setImageResource(R.drawable.dice_2)
+        val drawableResource = when (diceRoll){
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
 
+        }
+
+        // Update the ImageView with the correct drawable resource id
+        diceImage.setImageResource(drawableResource)
+
+        //update the content description
+        diceImage.contentDescription = diceRoll.toString()
 
     }
 }
