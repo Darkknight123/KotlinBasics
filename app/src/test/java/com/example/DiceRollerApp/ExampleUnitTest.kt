@@ -1,4 +1,4 @@
-package com.example.kotlinbasics
+package com.example.DiceRollerApp
 
 import org.junit.Test
 

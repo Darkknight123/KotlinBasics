@@ -1,4 +1,4 @@
-package com.example.kotlinbasics
+package com.example.DiceRollerApp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
